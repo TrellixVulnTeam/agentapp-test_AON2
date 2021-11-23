@@ -1,0 +1,82 @@
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+
+<!-- Toolbar -->
+<div class="container p-3">
+  <form class="form-control" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row p-1">
+      <div class="col-3">
+        <label for="kilometers" class="col-form-label"><strong>Количество километров</strong></label>
+      </div>
+      <div class="col-9">
+        <input type="text" id="kilometers" class="form-control" formControlName="kilometers">
+      </div>
+    </div>
+    <div class="row p-1">
+      <div class="col-3">
+        <label for="age" class="col-form-label"><strong>Возраст</strong></label>
+      </div>
+      <div class="col-9">
+        <input type="text" id="age" class="form-control" formControlName="age">
+      </div>
+    </div>
+    <div class="row p-1">
+      <div class="col-3">
+        <label for="weight" class="col-form-label"><strong>Вес багажа</strong></label>
+      </div>
+      <div class="col-9">
+        <input type="text" id="weight" class="form-control" formControlName="weight">
+      </div>
+    </div>
+    <div class="row p-1">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Рассчитать</button>
+      </div>
+    </div>
+  </form>
+  <div class="row p-1">
+    <div class="col-12">
+      <strong>Предложения</strong>
+    </div>
+  </div>
+  <div class="row p-1">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <strong>Аэрофлот</strong>
+        </div>
+        <div class="card-body">
+          <p>Эконом: {{rez_tarrif_1}}</p>
+          <p>Продвинутый: {{rez_tarrif_2}}</p>
+          <p>Люкс: {{rez_tarrif_3}}</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <strong>РЖД</strong>
+        </div>
+        <div class="card-body">
+          <p>Эконом: {{rez_tarrif_4}}</p>
+          <p>Продвинутый: {{rez_tarrif_5}}</p>
+          <p>Люкс: {{rez_tarrif_6}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
